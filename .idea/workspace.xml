@@ -2,7 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80d99ebd-5af8-45e7-b71d-cdf20b22d435" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/1.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/10.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/11.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/12.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/13.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/2.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/3.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/4.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/5.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/6.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/7.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/8.mp3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/9.mp3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/demo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +28,18 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QLQdRrghqgoQQCQvBk5kmHLaYx" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/music" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -65,6 +91,14 @@
       <option name="presentableId" value="Default" />
       <updated>1567547483508</updated>
     </task>
+    <task id="LOCAL-00001" summary="Finished demo">
+      <created>1567550715878</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567550715878</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,10 +106,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Finished demo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished demo" />
   </component>
 </project>
