@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80d99ebd-5af8-45e7-b71d-cdf20b22d435" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assistant.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CSE5914Project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CSE5914Project.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assistant.py" beforeDir="false" afterPath="$PROJECT_DIR$/assistant.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +141,7 @@
       <workItem from="1568756885883" duration="1227000" />
       <workItem from="1568929897982" duration="3583000" />
       <workItem from="1568934453478" duration="57000" />
-      <workItem from="1569050386719" duration="990000" />
+      <workItem from="1569050386719" duration="2321000" />
     </task>
     <task id="LOCAL-00001" summary="Finished demo">
       <created>1567550715878</created>
@@ -159,7 +157,14 @@
       <option name="project" value="LOCAL" />
       <updated>1567617670924</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Initial Implement">
+      <created>1569051435491</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1569051435491</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -182,10 +187,11 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Finished demo" />
     <MESSAGE value="Added video clips" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added video clips" />
+    <MESSAGE value="Initial Implement" />
+    <option name="LAST_COMMIT_MESSAGE" value="Initial Implement" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSE5914Project$demo.coverage" NAME="demo Coverage Results" MODIFIED="1568933315948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CSE5914Project$assistant.coverage" NAME="assistant Coverage Results" MODIFIED="1569051344082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE5914Project$assistant.coverage" NAME="assistant Coverage Results" MODIFIED="1569052703511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
