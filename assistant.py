@@ -53,9 +53,3 @@ def send_input(text: str):
     message, action = find_action(response['output']['generic'][0]['text'])
     intent = response['output']['intents'][0]['intent']
     return message, action, intent
-
-
-##send_input('hello')
-##print(find_action('I will query the weather information for you. !<+WEATHER'))
-
-print(send_input("What' the weather tomorrow?"))

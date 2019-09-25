@@ -55,10 +55,13 @@ class Converter:
 
     def listen(self):
         with open(self.k_folder + self.k_music_temp_in, "rb") as audio_file:
-            result = self.s2t.recognize(audio_file, model=self.k_st2_model)
-            result = loads(str(result))
-            result = result["result"]["results"][0]["alternatives"]
-            return result
+            try:
+                result = self.s2t.recognize(audio_file, model=self.k_st2_model)
+                result = loads(str(result))
+                result = result["result"]["results"][0]["alternatives"][0]['transcript']
+            except Exception:
+                return False, "I don't understand what you are saying."
+            return True, str(result)
 
     def _record(self):
         stream = self.py_audio.open(format=self.k_format,
