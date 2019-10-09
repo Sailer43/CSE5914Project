@@ -74,6 +74,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.assistant">
+    <configuration name="222" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CSE5914Project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/222.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="assistant" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CSE5914Project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -121,6 +143,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.assistant" />
+        <item itemvalue="Python.222" />
       </list>
     </recent_temporary>
   </component>
@@ -141,7 +164,12 @@
       <workItem from="1568756885883" duration="1227000" />
       <workItem from="1568929897982" duration="3583000" />
       <workItem from="1568934453478" duration="57000" />
-      <workItem from="1569050386719" duration="2321000" />
+      <workItem from="1569050386719" duration="2764000" />
+      <workItem from="1570141187517" duration="465000" />
+      <workItem from="1570304067357" duration="71000" />
+      <workItem from="1570571798393" duration="8000" />
+      <workItem from="1570571827143" duration="2796000" />
+      <workItem from="1570589808996" duration="1724000" />
     </task>
     <task id="LOCAL-00001" summary="Finished demo">
       <created>1567550715878</created>
@@ -164,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569051435491</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Change the send_input function. Add documentation.">
+      <created>1569052755649</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1569052755649</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -188,10 +223,12 @@
     <MESSAGE value="Finished demo" />
     <MESSAGE value="Added video clips" />
     <MESSAGE value="Initial Implement" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Implement" />
+    <MESSAGE value="Change the send_input function. Add documentation." />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the send_input function. Add documentation." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CSE5914Project$222.coverage" NAME="222 Coverage Results" MODIFIED="1570574642955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE5914Project$demo.coverage" NAME="demo Coverage Results" MODIFIED="1568933315948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CSE5914Project$assistant.coverage" NAME="assistant Coverage Results" MODIFIED="1569052703511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE5914Project$assistant.coverage" NAME="assistant Coverage Results" MODIFIED="1570591409091" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
