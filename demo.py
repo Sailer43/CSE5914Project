@@ -6,6 +6,7 @@ from os import system
 
 MUSIC_DIR = "music/"
 
+
 class MusicPlayer:
 
     def __init__(self):

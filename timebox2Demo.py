@@ -20,6 +20,7 @@ def query_music(keywords: list):
     url = MUSIC_URL.format(input="+".join(keywords))
     keyword_list = extract_keywords("WORK_OF_ART", find_keywords(read_web(url)))
     wb.open(url)
+    keyword_list = [k for k in keyword_list if k not in ["» Lyrics:"]]
     return keyword_list[1:5]
 
 
@@ -50,7 +51,11 @@ def main():
         user_input = converter.listen()
         if user_input[0]:
             print('"{}"'.format(user_input[1]))
-            text, action, intent = send_input(user_input[1])
+            try:
+                text, action, intent = send_input(user_input[1])
+            except IndexError:
+                text = "I don't understand what you are saying."
+                intent = None
             if intent in ["Ask_Recommendation_Movie",
                           "Ask_Recommendation_Music",
                           "Ask_Recommendation_Restaurant",
