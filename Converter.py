@@ -43,7 +43,7 @@ class Converter:
             )
 
     def play_music(self):
-        system("open " + self.k_folder + self.k_music_temp_out)
+        system("afplay " + self.k_folder + self.k_music_temp_out)
 
     def record(self):
         self.m_thread = Thread(target=self._record, args=())

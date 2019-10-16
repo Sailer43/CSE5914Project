@@ -7,7 +7,7 @@ def read_web(url: str):
     html = fp.read()
     html.decode("utf8")
     fp.close()
-    converter = BeautifulSoup(html)
+    converter = BeautifulSoup(html, features="html.parser")
     for script in converter(["script", "style"]):
         script.extract()
     text = converter.get_text()
@@ -18,7 +18,7 @@ def read_web(url: str):
 
 
 def main():
-    print(read_web("https://www.lyrics.com/lyrics/love%20songs"))
+    print(read_web("https://open.spotify.com/search/David%20Bowie's%20music"))
 
 
 if __name__ == '__main__':
