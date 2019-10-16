@@ -24,8 +24,10 @@ def search(keywords: str, token: str, type: str = "playlist", market: str = "US"
             first_playlist = default_playlist
         return first_playlist["name"], first_playlist["external_urls"]["spotify"]
 
+
 def main():
     print(search("David%20Bowie", "BQAUDjgn6uFrUJDkgdX8Q49BnUpvs_TwtEiWG8X4iN_wpu2XCQ9u-TjAsDJgwQ85CJTBmslWK23StgeI0PsPB9-jFAmg9_KWYxLBAU1_trBU-OutuHeCcIAcgDQUqzaH6SBp5HoFoHkHdDniWcL5Vg82pIGbsqrBFGF-2_8GE0wcJ50hS-6MfNjbkg"))
+
 
 if __name__ == '__main__':
     main()

@@ -29,7 +29,6 @@ def setup_spotify():
 
 
 SP_TOKEN = setup_spotify()
-print(SP_TOKEN)
 
 
 def query_food(keywords: list):
@@ -85,8 +84,9 @@ def main():
         print("Start recording")
         converter.record()
         print("End recording")
-        # user_input = converter.listen()
-        user_input = (True, "Can you find some David Bowie's music for me?")
+        user_input = converter.listen()
+        # testing
+        # user_input = (True, "Can you find some David Bowie's music for me?")
         if user_input[0]:
             print('"{}"'.format(user_input[1]))
             try:
