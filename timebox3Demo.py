@@ -8,8 +8,9 @@ from sys import argv
 import spotipy.util as util
 from spotify_search import search
 from json import loads
+from profile_custom import Profiler
 
-FOOD_URL = "https://ohiostatefair.com/food/?search-input={input}&checkbox=on&submit=submit&map=food"
+FOOD_URL = "https://www.yelp.com/search?find_desc={input}&find_loc=Columbus%2C+OH&ns=1"
 MUSIC_URL = "https://open.spotify.com/search/{input}"
 MOVIE_URL = "https://www.imdb.com/find?ref_=nv_sr_fn&q={input}&s=all"
 WEATHER_URL = "https://weather.com/weather/tenday/l/Columbus+OH+USOH0212:1:US"
@@ -75,7 +76,33 @@ def testing():
             print("s2t failed")
 
 
+def refine_keywords(keyword_list, profile, THRESHOLD=0.5):
+    result = []
+    for keyword in keyword_list:
+        entry = profile.get_keyword(keyword)
+        relevance = entry["relevance"]
+        sadness = entry["sadness"]
+        joy = entry["joy"]
+        fear = entry["fear"]
+        disgust = entry["disgust"]
+        anger = entry["anger"]
+        if relevance >= THRESHOLD or max([sadness, joy, fear, disgust, anger]) > THRESHOLD:
+            result.append(keyword)
+    return result
+
+
+def refine_entities(entity_list, profile, THRESHOLD=0.85):
+    result = []
+    for entity in entity_list:
+        entry = profile.get_entity(entity)
+        confidence = entry["confidence"]
+        if confidence > THRESHOLD:
+            result.append(entity)
+    return result
+
+
 def main():
+    profile = Profiler()
     if len(argv) > 1 and argv[1] == "-e":
         testing()
         return
@@ -86,7 +113,7 @@ def main():
         print("End recording")
         user_input = converter.listen()
         # testing
-        # user_input = (True, "Can you find some David Bowie's music for me?")
+        # user_input = (True, "Could you play David Bowie's songs for me?")
         if user_input[0]:
             print('"{}"'.format(user_input[1]))
             try:
@@ -101,13 +128,25 @@ def main():
                 try:
                     r = nlu(user_input[1])
                     keywords = [sub_r["text"] for sub_r in r["keywords"]]
+                    entities = [sub_r["text"] for sub_r in r["entities"]]
+                    print(keywords, entities)
+                    profile.record(r["keywords"], r["entities"])
+                    keywords = refine_keywords(keywords, profile)
+                    entities = refine_entities(entities, profile)
                     keyword_list = list()
-                    for keyword in keywords:
-                        keyword_list.extend([k for k in keyword.split() if k not in ["HESITATION", "movie", "song"]])
+                    if len(entities) > 0:
+                        for entity in entities:
+                            keyword_list.extend([k for k in entity.split() if k not in ["HESITATION", "movie", "song"]])
+                    else:
+                        for keyword in keywords:
+                            keyword_list.extend([k for k in keyword.split() if k not in ["HESITATION", "movie", "song"]])
+                    print(keyword_list)
                     result = function_map[intent](keyword_list)
-                    if result:
+                    if result and result != [] and result != ["Not Found"] or intent != "Ask_Recommendation_Music":
                         text = str(text)
                         text = text.format(result=", ".join(result))
+                    else:
+                        text = "I cannot find any results, sorry."
                 except Exception as e:
                     print(e)
                 pass
