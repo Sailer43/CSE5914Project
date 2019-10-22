@@ -7,7 +7,7 @@ from fetch_web import read_web
 from sys import argv
 import spotipy.util as util
 from spotify_search import search
-from json import loads
+from json import loads, dumps
 from profile_custom import Profiler
 
 FOOD_URL = "https://www.yelp.com/search?find_desc={input}&find_loc=Columbus%2C+OH&ns=1"
@@ -22,6 +22,10 @@ def setup_spotify():
     with open("spotify.config", "r") as config_file:
         config_string = "\n".join(config_file.readlines())
     config = loads(config_string)
+    if config["username"] == "":
+        config["username"] = input("Please enter your Spotify username: ")
+        with open("spotify.config", "w") as config_file:
+            config_file.write(dumps(config))
     return util.prompt_for_user_token(config["username"],
                                       scope=SP_SCOPE,
                                       client_id=config["client_id"],
@@ -38,6 +42,8 @@ def query_food(keywords: list):
 
 
 def query_music(keywords: list):
+    if len(keywords) > 2:
+        keywords = keywords[0:2]
     title, url = search("%20".join(keywords), SP_TOKEN)
     wb.open(url)
     return [title]
@@ -76,7 +82,7 @@ def testing():
             print("s2t failed")
 
 
-def refine_keywords(keyword_list, profile, THRESHOLD=0.5):
+def refine_keywords(keyword_list, profile, THRESHOLD=0.7):
     result = []
     for keyword in keyword_list:
         entry = profile.get_keyword(keyword)
@@ -102,10 +108,13 @@ def refine_entities(entity_list, profile, THRESHOLD=0.85):
 
 
 def main():
+    verbose = False
     profile = Profiler()
     if len(argv) > 1 and argv[1] == "-e":
         testing()
         return
+    if len(argv) > 1 and argv[1] == "-v":
+        verbose = True
     converter = Converter()
     while True:
         print("Start recording")
@@ -129,7 +138,8 @@ def main():
                     r = nlu(user_input[1])
                     keywords = [sub_r["text"] for sub_r in r["keywords"]]
                     entities = [sub_r["text"] for sub_r in r["entities"]]
-                    print(keywords, entities)
+                    if verbose:
+                        print(keywords, entities)
                     profile.record(r["keywords"], r["entities"])
                     keywords = refine_keywords(keywords, profile)
                     entities = refine_entities(entities, profile)
@@ -140,7 +150,8 @@ def main():
                     else:
                         for keyword in keywords:
                             keyword_list.extend([k for k in keyword.split() if k not in ["HESITATION", "movie", "song"]])
-                    print(keyword_list)
+                    if verbose:
+                        print(keyword_list)
                     result = function_map[intent](keyword_list)
                     if result and result != [] and result != ["Not Found"] or intent != "Ask_Recommendation_Music":
                         text = str(text)
