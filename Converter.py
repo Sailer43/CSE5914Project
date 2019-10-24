@@ -1,4 +1,5 @@
 from ibm_watson import TextToSpeechV1, SpeechToTextV1, DetailedResponse
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import pyaudio as pa
 
 from os import system
@@ -28,8 +29,10 @@ class Converter:
     k_channels = 1
 
     def __init__(self):
-        self.s2t = SpeechToTextV1(iam_apikey=self.k_s2t_api_key, url=self.k_s2t_url)
-        self.t2s = TextToSpeechV1(iam_apikey=self.k_t2s_api_key, url=self.k_t2s_url)
+        self.s2t = SpeechToTextV1(authenticator=IAMAuthenticator(self.k_s2t_api_key))
+        self.s2t.set_service_url(self.k_s2t_url)
+        self.t2s = TextToSpeechV1(authenticator=IAMAuthenticator(self.k_t2s_api_key))
+        self.t2s.set_service_url(self.k_t2s_url)
         self.py_audio = pa.PyAudio()
 
     def read(self, string: str):

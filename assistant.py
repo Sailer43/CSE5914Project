@@ -1,4 +1,4 @@
-import ibm_cloud_sdk_core
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import ibm_watson
 
 APIKEY = "A4LMwqnkIQac81v88v14_AZLj5F__wjY83S9WOgjqAXw"
@@ -7,10 +7,10 @@ APIURL = 'https://gateway-wdc.watsonplatform.net/assistant/api'
 ASSISTANT_ID = 'f2ddf51f-1048-44ad-a4a8-3d5a5289178a'
 
 service = ibm_watson.AssistantV1(
-    iam_apikey=APIKEY,
-    version=APIVERSION,
-    url=APIURL
+    version = APIVERSION,
+    authenticator=IAMAuthenticator(APIKEY)
 )
+service.set_service_url(APIURL)
 
 workspaceID = service.list_workspaces(
     assistant_id=ASSISTANT_ID

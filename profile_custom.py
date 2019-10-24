@@ -1,4 +1,5 @@
 from json import loads, dumps
+from os import path
 
 
 PROFILE_PATH = "User Profile"
@@ -7,9 +8,14 @@ PROFILE_PATH = "User Profile"
 class Profiler:
 
     def __init__(self, alpha=0.75):
-        with open(PROFILE_PATH, "r") as profile_file:
-            profile = "\n".join(profile_file.readlines())
-            self.profile_dict = loads(profile)
+        if path.exists(PROFILE_PATH):
+            with open(PROFILE_PATH, "r") as profile_file:
+                profile = "\n".join(profile_file.readlines())
+                self.profile_dict = loads(profile)
+        else:
+            with open(PROFILE_PATH, "w+") as profile_file:
+                profile = "\n".join(profile_file.readlines())
+                self.profile_dict = loads(profile)
         self.alpha = 0.75
 
     def record(self, keywords: list, entities: list):
