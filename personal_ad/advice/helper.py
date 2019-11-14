@@ -2,6 +2,7 @@ import spotipy.util as util
 from . import spotify_search
 from . import nltk_functions
 from . import fetch_web
+from json import loads
 
 FOOD_URL = "https://www.yelp.com/search?find_desc={input}&find_loc=Columbus%2C+OH&ns=1"
 MUSIC_URL = "https://open.spotify.com/search/{input}"
@@ -25,6 +26,7 @@ def setup_spotify():
                                       client_secret=config["client_secret"],
                                       redirect_uri="https://open.spotify.com/browse/featured")
 
+SP_TOKEN = setup_spotify()
 
 def query_food(keywords: list):
     return None, FOOD_URL.format(input="+".join(keywords))
