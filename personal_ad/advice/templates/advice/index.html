@@ -1,22 +1,35 @@
 <!DOCTYPE html>
 {% load static %}
 <html>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <head>
         <meta charset="utf-8">
         <title>Personal Advice</title>
     </head>
+    <div class="jumbotron text-center" style="margin-bottom:0">
+        <h1>Recommendation System Based on Your Emotion</h1>
+    </div>
     <body>
-        <div id="chat_history">
-            <p class="assistant_chat">Hello! Hi, I am your personal assistant. I can recognize your speech input and guess what you want, then give you proper suggestions. Moreover, I can also analyze your emotion to give you proper suggestion. I am still under development.</p>
-            <p class="start_promote">(Say something to start chat!)</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center">
+                      <br>
+                      <div id="chat_history">
+                          <p class="assistant_chat alert alert-info">Hi! I am your personal assistant. I can recognize your speech input and guess what you want, then give you proper suggestions. Moreover, I can also analyze your emotion to give you proper suggestion. I am still under development.</p>
+                          <p class="start_promote alert alert-primary">(Say something to start chat!)</p>
+                      </div>
+                      <p>
+                          <button id="start" class="btn btn-primary btn-lg" disabled>Start</button>
+                          <button id="stop" class="btn btn-primary btn-lg" disabled>Stop</button>
+                      </p>
+                      <p><audio id="audio" controls></audio></p>
+                      <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+                      {% csrf_token %}
+                      <script src="{% static 'advice/index.js' %}"></script>
+                </div>
+            </div>
         </div>
-        <p>
-            <button id="start" disabled>Start</button>
-            <button id="stop" disabled>Stop</button>
-        </p>
-        <p><audio id="audio" controls></audio></p>
-        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-        {% csrf_token %}
-        <script src="{% static 'advice/index.js' %}"></script>
     </body>
 </html>
