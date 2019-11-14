@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Personal Advice</title>
+    </head>
+    <body>
+        <p>
+            <button id="start" disabled>Start</button>
+            <button id="stop" disabled>Stop</button>
+        </p>
+        <p><audio id="audio" controls></audio></p>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        {% csrf_token %}
+        <script src="{% static 'advice/index.js' %}"></script>
+    </body>
+</html>
