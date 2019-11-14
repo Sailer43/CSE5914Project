@@ -52,8 +52,11 @@ function onRecordingReady(e) {
     contentType: false,
     success: function (data) {
       c_audio = new Blob(data["audio"], {type: "audio/webm;codecs=opus"});
-      text = data["text"]
+      input_text = data["input_text"]
+      output_text = data["output_text"]
       external_link = data["external_link"]
+      $("#chat_history").append("<p class='user_chat'>" + input_text + "</p>")
+      $("#chat_history").append("<p class='assistant_chat'>" + output_text + "</p>")
     }
   });
 }
