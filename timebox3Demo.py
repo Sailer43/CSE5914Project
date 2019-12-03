@@ -71,10 +71,7 @@ def testing():
     converter = Converter()
     while True:
         intent = input("Please enter your intent: ")
-        print("Start recording")
-        converter.record()
-        print("End recording")
-        user_input = converter.listen()
+        user_input = True, input("Please enter your example:")
         if user_input[0]:
             print('"{}"'.format(user_input[1]))
             print(add_example_to_intent(user_input[1], intent))
