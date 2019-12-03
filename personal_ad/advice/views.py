@@ -54,11 +54,11 @@ def input_audio(request: HttpRequest):
                     else:
                         output_text = "I cannot find any results, sorry."
                 except Exception as e:
-                    print("entered")
-                    raise e
+                    print(e)
                 pass
         else:
             output_text = input_text
+            input_text = "(...)"
         output_audio = converter_instant.read(output_text)
         output_audio = [e for e in output_audio]
         input_text = input_text.replace("%HESITATION", "(...)")

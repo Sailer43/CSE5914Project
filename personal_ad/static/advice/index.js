@@ -55,11 +55,11 @@ function onRecordingReady(e) {
       input_text = data["input_text"]
       output_text = data["output_text"]
       external_link = data["external_link"]
-      $("#chat_history").append("<p class='user_chat'>" + input_text + "</p>")
+      $("#chat_history").append("<p class='user_chat alert alert-primary'>" + input_text + "</p>")
       if (external_link !== "") {
-        $("#chat_history").append("<a href='" + external_link + "' class='assistant_chat'>" + output_text + "</a>")
+        $("#chat_history").append("<p class='assistant_chat alert alert-info'><a href='" + external_link + "' target='_blank'>" + output_text + "</a></p>")
       } else {
-        $("#chat_history").append("<p class='assistant_chat'>" + output_text + "</p>")
+        $("#chat_history").append("<p class='assistant_chat alert alert-info' >" + output_text + "</p>")
       }
     }
   });
